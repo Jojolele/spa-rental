@@ -19,6 +19,31 @@
       <textarea matInput rows="6" formControlName="address" placeholder="Apartment Address"></textarea>
       <mat-error *ngIf="form.get('address').invalid">Please enter an address</mat-error>
     </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="price" placeholder="Price" type="number">
+      <mat-error *ngIf="form.get('price').invalid">Please enter a price</mat-error>
+    </mat-form-field>
+
+    <div class="roomCount">
+      <mat-form-field class="roomCounter roomCounter-1">
+        <input matInput formControlName="bedroomCount" placeholder="Bedrooms" type="number">
+        <mat-error *ngIf="form.get('bedroomCount').invalid">Please enter a number</mat-error>
+      </mat-form-field>
+      <mat-form-field class="roomCounter">
+        <input matInput formControlName="bathroomCount" placeholder="Bathrooms" type="number">
+        <mat-error *ngIf="form.get('bathroomCount').invalid">Please enter a number</mat-error>
+      </mat-form-field>
+      <mat-form-field class="roomCounter">
+        <input matInput formControlName="kitchenCount" placeholder="Kitchen" type="number">
+        <mat-error *ngIf="form.get('kitchenCount').invalid">Please enter a number</mat-error>
+      </mat-form-field>
+      <mat-form-field class="roomCounter">
+        <input matInput formControlName="garageCount" placeholder="Garage" type="number">
+        <mat-error *ngIf="form.get('garageCount').invalid">Please enter a number</mat-error>
+      </mat-form-field>
+    </div>
+
     <button mat-raised-button color="accent" type="submit">Save</button>
   </form>
 </mat-card>

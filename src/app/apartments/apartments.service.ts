@@ -32,6 +32,11 @@ export class ApartmentsService {
               return {
                 title: apartment.title,
                 address: apartment.address,
+                price: apartment.price,
+                bedroomCount: apartment.bedroomCount,
+                bathroomCount: apartment.bathroomCount,
+                kitchenCount: apartment.kitchenCount,
+                garageCount: apartment.garageCount,
                 id: apartment._id,
                 imagePath: apartment.imagePath,
                 creator: apartment.creator,
@@ -59,15 +64,34 @@ export class ApartmentsService {
       _id: string;
       title: string;
       address: string;
+      price: string;
+      bedroomCount: string;
+      bathroomCount: string;
+      kitchenCount: string;
+      garageCount: string;
       imagePath: string;
       creator: string;
     }>(BACKEND_URL + id);
   }
 
-  addApartment(title: string, address: string, image: File) {
+  addApartment(
+    title: string,
+    address: string,
+    price: string,
+    bedroomCount: string,
+    bathroomCount: string,
+    kitchenCount: string,
+    garageCount: string,
+    image: File
+  ) {
     const apartmentData = new FormData();
     apartmentData.append('title', title);
     apartmentData.append('address', address);
+    apartmentData.append('price', price);
+    apartmentData.append('bedroomCount', bedroomCount);
+    apartmentData.append('bathroomCount', bathroomCount);
+    apartmentData.append('kitchenCount', kitchenCount);
+    apartmentData.append('garageCount', garageCount);
     apartmentData.append('image', image, title);
     this.http
       .post<{ message: string; apartment: Apartment }>(
@@ -83,6 +107,11 @@ export class ApartmentsService {
     id: string,
     title: string,
     address: string,
+    price: string,
+    bedroomCount: string,
+    bathroomCount: string,
+    kitchenCount: string,
+    garageCount: string,
     image: File | string
   ) {
     let apartmentData: Apartment | FormData;
@@ -91,12 +120,22 @@ export class ApartmentsService {
       apartmentData.append('id', id);
       apartmentData.append('title', title);
       apartmentData.append('address', address);
+      apartmentData.append('price', price);
+      apartmentData.append('bedroomCount', bedroomCount);
+      apartmentData.append('bathroomCount', bathroomCount);
+      apartmentData.append('kitchenCount', kitchenCount);
+      apartmentData.append('garageCount', garageCount);
       apartmentData.append('image', image, title);
     } else {
       apartmentData = {
         id: id,
         title: title,
         address: address,
+        price: price,
+        bedroomCount: bedroomCount,
+        bathroomCount: bathroomCount,
+        kitchenCount: kitchenCount,
+        garageCount: garageCount,
         imagePath: image,
         creator: null,
       };

@@ -16,6 +16,11 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class ApartmentCreateComponent implements OnInit, OnDestroy {
   enteredTitle = '';
   enteredAddress = '';
+  enteredPrice = '';
+  enteredBedroomCount = '';
+  enteredBathroomCount = '';
+  enteredKitchenCount = '';
+  enteredGarageCount = '';
   apartment: Apartment;
   isLoading = false;
   form: FormGroup;
@@ -43,6 +48,21 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
       address: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(5)],
       }),
+      price: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(1)],
+      }),
+      bedroomCount: new FormControl(null, {
+        validators: [Validators.required],
+      }),
+      bathroomCount: new FormControl(null, {
+        validators: [Validators.required],
+      }),
+      kitchenCount: new FormControl(null, {
+        validators: [Validators.required],
+      }),
+      garageCount: new FormControl(null, {
+        validators: [Validators.required],
+      }),
       image: new FormControl(null, {
         validators: [Validators.required],
         asyncValidators: [mimeType],
@@ -61,12 +81,22 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
               id: apartmentData._id,
               title: apartmentData.title,
               address: apartmentData.address,
+              price: apartmentData.price,
+              bedroomCount: apartmentData.bedroomCount,
+              bathroomCount: apartmentData.bathroomCount,
+              kitchenCount: apartmentData.kitchenCount,
+              garageCount: apartmentData.garageCount,
               imagePath: apartmentData.imagePath,
               creator: apartmentData.creator
             };
             this.form.setValue({
               title: this.apartment.title,
               address: this.apartment.address,
+              price: this.apartment.price,
+              bedroomCount: this.apartment.bedroomCount,
+              bathroomCount: this.apartment.bathroomCount,
+              kitchenCount: this.apartment.kitchenCount,
+              garageCount: this.apartment.garageCount,
               image: this.apartment.imagePath
             });
           });
@@ -97,6 +127,11 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
       this.apartmentsService.addApartment(
         this.form.value.title,
         this.form.value.address,
+        this.form.value.price,
+        this.form.value.bedroomCount,
+        this.form.value.bathroomCount,
+        this.form.value.kitchenCount,
+        this.form.value.garageCount,
         this.form.value.image
       );
     } else {
@@ -104,6 +139,11 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
         this.apartmentId,
         this.form.value.title,
         this.form.value.address,
+        this.form.value.price,
+        this.form.value.bedroomCount,
+        this.form.value.bathroomCount,
+        this.form.value.kitchenCount,
+        this.form.value.garageCount,
         this.form.value.image
       );
     }

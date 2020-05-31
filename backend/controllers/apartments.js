@@ -5,6 +5,11 @@ exports.createApartment = (req, res, next) => {
   const apartment = new Apartment({
     title: req.body.title,
     address: req.body.address,
+    price: req.body.price,
+    bedroomCount: req.body.bedroomCount,
+    bathroomCount: req.body.bathroomCount,
+    kitchenCount: req.body.kitchenCount,
+    garageCount: req.body.garageCount,
     imagePath: url + "/images/" + req.file.filename,
     creator: req.userData.userId,
   });
@@ -17,6 +22,11 @@ exports.createApartment = (req, res, next) => {
           id: createdApartment._id,
           title: createdApartment.title,
           address: createdApartment.address,
+          price: createdApartment.price,
+          bedroomCount: createdApartment.bedroomCount,
+          bathroomCount: createdApartment.bathroomCount,
+          kitchenCount: createdApartment.kitchenCount,
+          garageCount: createdApartment.garageCount,
           imagePath: createdApartment.imagePath,
         },
       });
@@ -38,6 +48,11 @@ exports.updateApartment = (req, res, next) => {
     _id: req.body.id,
     title: req.body.title,
     address: req.body.address,
+    price: req.body.price,
+    bedroomCount: req.body.bedroomCount,
+    bathroomCount: req.body.bathroomCount,
+    kitchenCount: req.body.kitchenCount,
+    garageCount: req.body.garageCount,
     imagePath: imagePath,
     creator: req.userData.userId,
   });

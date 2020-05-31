@@ -18,3 +18,22 @@ input[type="file"] {
     height: 100%;
   }
 }
+
+.roomCount {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  // flex-wrap: wrap;
+
+  .roomCounter {
+    margin-left: 40px;
+    width: 8%;
+
+
+    &-1 {
+      margin-left: 0;
+    }
+  }
+
+}
+
