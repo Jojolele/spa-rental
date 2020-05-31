@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.apartment-image {
+  width: 100%;
+
+  img {
+    width: 60%;
+    display: block;
+    margin: auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+  }
+}
+
+.info-text {
+  text-align: center;
+}
+
+mat-paginator {
+  margin-top: 1rem;
+}
