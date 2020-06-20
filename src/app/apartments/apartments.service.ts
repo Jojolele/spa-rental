@@ -33,6 +33,7 @@ export class ApartmentsService {
                 title: apartment.title,
                 address: apartment.address,
                 price: apartment.price,
+                phoneNumber: apartment.phoneNumber,
                 bedroomCount: apartment.bedroomCount,
                 bathroomCount: apartment.bathroomCount,
                 kitchenCount: apartment.kitchenCount,
@@ -65,6 +66,7 @@ export class ApartmentsService {
       title: string;
       address: string;
       price: string;
+      phoneNumber: string;
       bedroomCount: string;
       bathroomCount: string;
       kitchenCount: string;
@@ -78,6 +80,7 @@ export class ApartmentsService {
     title: string,
     address: string,
     price: string,
+    phoneNumber: string,
     bedroomCount: string,
     bathroomCount: string,
     kitchenCount: string,
@@ -88,6 +91,7 @@ export class ApartmentsService {
     apartmentData.append('title', title);
     apartmentData.append('address', address);
     apartmentData.append('price', price);
+    apartmentData.append('phoneNumber', phoneNumber);
     apartmentData.append('bedroomCount', bedroomCount);
     apartmentData.append('bathroomCount', bathroomCount);
     apartmentData.append('kitchenCount', kitchenCount);
@@ -108,6 +112,7 @@ export class ApartmentsService {
     title: string,
     address: string,
     price: string,
+    phoneNumber: string,
     bedroomCount: string,
     bathroomCount: string,
     kitchenCount: string,
@@ -121,6 +126,7 @@ export class ApartmentsService {
       apartmentData.append('title', title);
       apartmentData.append('address', address);
       apartmentData.append('price', price);
+      apartmentData.append('phoneNumber', phoneNumber);
       apartmentData.append('bedroomCount', bedroomCount);
       apartmentData.append('bathroomCount', bathroomCount);
       apartmentData.append('kitchenCount', kitchenCount);
@@ -132,6 +138,7 @@ export class ApartmentsService {
         title: title,
         address: address,
         price: price,
+        phoneNumber: phoneNumber,
         bedroomCount: bedroomCount,
         bathroomCount: bathroomCount,
         kitchenCount: kitchenCount,

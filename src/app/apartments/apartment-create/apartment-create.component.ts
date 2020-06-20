@@ -17,6 +17,7 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
   enteredTitle = '';
   enteredAddress = '';
   enteredPrice = '';
+  enteredPhoneNumber = '';
   enteredBedroomCount = '';
   enteredBathroomCount = '';
   enteredKitchenCount = '';
@@ -51,6 +52,9 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
       price: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(1)],
       }),
+      phoneNumber: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(1)],
+      }),
       bedroomCount: new FormControl(null, {
         validators: [Validators.required],
       }),
@@ -82,6 +86,7 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
               title: apartmentData.title,
               address: apartmentData.address,
               price: apartmentData.price,
+              phoneNumber: apartmentData.phoneNumber,
               bedroomCount: apartmentData.bedroomCount,
               bathroomCount: apartmentData.bathroomCount,
               kitchenCount: apartmentData.kitchenCount,
@@ -93,6 +98,7 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
               title: this.apartment.title,
               address: this.apartment.address,
               price: this.apartment.price,
+              phoneNumber: this.apartment.phoneNumber,
               bedroomCount: this.apartment.bedroomCount,
               bathroomCount: this.apartment.bathroomCount,
               kitchenCount: this.apartment.kitchenCount,
@@ -128,6 +134,7 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
         this.form.value.title,
         this.form.value.address,
         this.form.value.price,
+        this.form.value.phoneNumber,
         this.form.value.bedroomCount,
         this.form.value.bathroomCount,
         this.form.value.kitchenCount,
@@ -140,6 +147,7 @@ export class ApartmentCreateComponent implements OnInit, OnDestroy {
         this.form.value.title,
         this.form.value.address,
         this.form.value.price,
+        this.form.value.phoneNumber,
         this.form.value.bedroomCount,
         this.form.value.bathroomCount,
         this.form.value.kitchenCount,

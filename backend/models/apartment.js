@@ -13,6 +13,10 @@ const apartmentSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
   bedroomCount: {
     type: String,
     required: true,

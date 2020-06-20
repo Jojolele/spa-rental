@@ -3,6 +3,7 @@ export interface Apartment {
   title: string;
   address: string;
   price: string;
+  phoneNumber: string;
   bedroomCount: string;
   bathroomCount: string;
   kitchenCount: string;

@@ -25,6 +25,11 @@
       <mat-error *ngIf="form.get('price').invalid">Please enter a price</mat-error>
     </mat-form-field>
 
+    <mat-form-field>
+      <input matInput formControlName="phoneNumber" placeholder="PhoneNumber" type="tel">
+      <mat-error *ngIf="form.get('phoneNumber').invalid">Please enter a valid phone number</mat-error>
+    </mat-form-field>
+
     <div class="roomCount">
       <mat-form-field class="roomCounter roomCounter-1">
         <input matInput formControlName="bedroomCount" placeholder="Bedrooms" type="number">
