@@ -35,7 +35,7 @@ exports.createApartment = (req, res, next) => {
     })
     .catch((error) => {
       res.status(500).json({
-        message: "Creating a post failed!",
+        message: "Creating an apartment failed!",
       });
     });
 };
@@ -72,7 +72,7 @@ exports.updateApartment = (req, res, next) => {
     })
     .catch((error) => {
       res.status(500).json({
-        message: "Couldn't update post!",
+        message: "Couldn't update apartment!",
       });
     });
 };
@@ -99,7 +99,7 @@ exports.getApartments = (req, res, next) => {
     })
     .catch((error) => {
       res.status(500).json({
-        message: "Fetching posts failed!",
+        message: "Fetching apartments failed!",
       });
     });
 };
@@ -115,7 +115,7 @@ exports.getApartment = (req, res, next) => {
     })
     .catch((error) => {
       res.status(500).json({
-        message: "Fetching posts failed!",
+        message: "Fetching apartments failed!",
       });
     });
 };
@@ -131,7 +131,7 @@ exports.deleteApartment = (req, res, next) => {
     })
     .catch((error) => {
       res.status(500).json({
-        message: "Fetching posts failed!",
+        message: "Fetching apartments failed!",
       });
     });
 };

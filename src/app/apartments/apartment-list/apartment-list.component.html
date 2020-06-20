@@ -8,11 +8,13 @@
       <img [src]="apartment.imagePath" [alt]="apartment.title">
     </div>
     <p>{{ apartment.address }}</p>
-    <p>USD ${{ apartment.price }}</p>
+    <p *ngIf="userIsAuthenticated">Phone Number: {{ apartment.phoneNumber }}</p>
+    <p *ngIf="!userIsAuthenticated">Phone Number: Please <a class="lsBtn" routerLink="/auth/login">Login</a> or <a class="lsBtn" routerLink="/auth/signup">Signup</a> to see the phone number</p>
     <p>Bedrooms: {{ apartment.bedroomCount }}</p>
     <p>Bathrooms: {{ apartment.bathroomCount }}</p>
     <p>Kitchen: {{ apartment.kitchenCount }}</p>
     <p>Garage: {{ apartment.garageCount }}</p>
+    <p>USD ${{ apartment.price }}</p>
     <mat-action-row *ngIf="userIsAuthenticated && userId === apartment.creator">
       <a mat-button color="primary" [routerLink]="['/edit', apartment.id]">Edit</a>
       <button mat-button color="warn" (click)="onDelete(apartment.id)">Delete</button>
