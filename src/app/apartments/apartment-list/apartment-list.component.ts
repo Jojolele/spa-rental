@@ -15,7 +15,7 @@ export class ApartmentListComponent implements OnInit, OnDestroy {
   apartments: Apartment[] = [];
   isLoading = false;
   totalApartments = 0;
-  apartmentsPerPage = 10;
+  apartmentsPerPage = 2;
   currentPage = 1;
   pageSizeOptions = [2, 5, 10, 15];
   userIsAuthenticated = false;

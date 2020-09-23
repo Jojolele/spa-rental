@@ -10,8 +10,8 @@ const app = express();
 
 mongoose
   .connect(
-    `mongodb+srv://jojo:${process.env.MONGO_ATLAS_PW}@cluster0-rpy9c.mongodb.net/node-angular?retryWrites=true&w=majority`
-  )
+    `mongodb+srv://jojo:${process.env.MONGO_ATLAS_PW}@cluster0.rpy9c.mongodb.net/node-angular?retryWrites=true&w=majority`
+  , {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     console.log("Connected to database!");
   })
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/apartments" ,apartmentsRoutes);
+app.use("/api/apartments", apartmentsRoutes);
 app.use('/api/user', userRoutes);
 
 module.exports = app;
